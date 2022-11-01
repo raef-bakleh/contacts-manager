@@ -1,0 +1,59 @@
+.allUsers {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 510px;
+  border-radius: 15px;
+  align-items: center;
+  padding: 15px;
+  gap: 8px;
+}
+.all {
+  border-radius: 20px;
+  background-color: #2e2a33;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.userList {
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  width: 480pxx;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.184);
+}
+
+#user:hover {
+  color: #8f44fd;
+  transition: all 0.2s ease-in;
+}
+
+#underline {
+  height: 3px;
+  visibility: hidden;
+}
+
+#user:hover ~ #underline {
+  background-color: #8f44fd;
+  width: auto;
+  visibility: visible;
+  border-radius: 20px;
+  animation: reveal 0.7s;
+}
+@keyframes reveal {
+  from {
+    clip-path: inset(0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0);
+  }
+}
+
+i {
+  cursor: pointer;
+}

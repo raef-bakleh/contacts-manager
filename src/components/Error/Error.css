@@ -1,0 +1,25 @@
+.error {
+  z-index: 100;
+  width: 500px;
+  height: 250px;
+  text-align: center;
+  color: red;
+  padding: 25px;
+  border-radius: 15px;
+  color: white;
+  background: rgba(0, 0, 0, 0.67);
+  overflow: hidden;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+}

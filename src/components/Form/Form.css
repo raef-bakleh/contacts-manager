@@ -1,0 +1,94 @@
+.form {
+  background-color: rgb(26, 25, 29);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  width: 510px;
+  height: 200px;
+  border-radius: 15px;
+  margin-top: 100px;
+  gap: 15px;
+  position: relative;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+
+.form input {
+  width: 480px;
+  height: 60px;
+  outline: none;
+  background: transparent;
+  border: 2px solid rgb(26, 25, 29);
+  font-family: inherit;
+  border-bottom: 2px solid #2e2a33;
+  color: rgba(255, 255, 255, 0.96);
+  border-radius: 15px;
+  font-size: 25px;
+  padding-left: 17px;
+  padding-top: 20px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.input > label[id="username"] {
+  position: absolute;
+  pointer-events: none;
+  translate: 0 -50%;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 2s;
+}
+.input > label[id="age"] {
+  position: absolute;
+  pointer-events: none;
+  translate: 0 -50%;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 2s;
+}
+
+.input > label[id="username"] {
+  top: 29%;
+  left: 34px;
+}
+.input > label[id="age"] {
+  top: 65%;
+  left: 34px;
+}
+
+.input > :is(input[id="username"]:focus, .has-value) ~ label[id="username"] {
+  color: #8f44fd;
+  translate: 0 -40px;
+  transition: 0.5s;
+}
+.input > :is(input[id="age"]:focus, .has-value) ~ label[id="age"] {
+  color: #8f44fd;
+  translate: 0 -40px;
+  transition: 0.5s;
+}
+
+input[id="age"]:focus{
+    border-bottom-color: #8f44fd;
+}
+input[id="username"]:focus{
+    border-bottom-color: #8f44fd;
+}
+
+.wErr{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
