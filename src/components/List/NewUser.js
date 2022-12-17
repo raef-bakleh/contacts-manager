@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Form from "../Form/Form";
 import "./NewUser.css";
 
