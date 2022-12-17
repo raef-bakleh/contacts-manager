@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState, useRef } from "react";
+import React, { ChangeEvent, useState, useRef, useEffect } from "react";
 import Error from "../Error/Error";
 import Button from "./Button";
 import "./Form.css";
@@ -33,12 +33,20 @@ function Form(props) {
       });
       return;
     }
-
     const newUser = {
       id: Math.round(Math.random() * 1000),
       username: username,
       age: age,
     };
+    localStorage.setItem(
+      "users",
+      JSON.stringify([
+        ...JSON.parse(localStorage.getItem("users") || "[]"),
+        newUser,
+      ])
+    );
+
+    console.log(JSON.parse(localStorage.getItem("users")));
     setUserName("");
     setUserAge("");
     // nameInputRef.current.value = '';

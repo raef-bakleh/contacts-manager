@@ -3,25 +3,39 @@ import Form from "../Form/Form";
 import "./NewUser.css";
 
 function NewUser(props) {
-  const [users, setNewUsers] = useState([]);
+  console.log(JSON.parse(localStorage.getItem("users")));
 
-  console.log(users);
-
+  const [users, setNewUsers] = useState(
+    JSON.parse(localStorage.getItem("users")) || []
+  );
   const retrieveData = (prev) => {
-    const allUsers = [prev, ...users];
-
+    const allUsers = [...users, prev];
     setNewUsers(allUsers);
   };
   const delteItem = (id) => {
-    const removeUser = users.filter((user=>{
-      return user.id !== id
-    }));
+    localStorage.setItem(
+      "users",
+      JSON.stringify(
+        JSON.parse(localStorage.getItem("users")).filter((user) => {
+          return user.id !== id;
+        })
+      )
+    );
+
+    console.log(id);
+    console.log(
+      JSON.parse(localStorage.getItem("users")).filter((user) => {
+        return user.id !== id;
+      })
+    );
+    const removeUser = users.filter((user) => {
+      return user.id !== id;
+    });
     setTimeout(() => {
-      setNewUsers(removeUser)
-      
+      setNewUsers(removeUser);
     }, 200);
-    
   };
+
   return (
     <div>
       <Form onHandleSubmit={retrieveData} />
@@ -34,7 +48,7 @@ function NewUser(props) {
               </div>
               <div id="underline"></div>
             </div>
-            <button id="delete"onClick={()=> delteItem(user.id)}>
+            <button id="delete" onClick={() => delteItem(user.id)}>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
                 <path
                   fill="#494C6B"
